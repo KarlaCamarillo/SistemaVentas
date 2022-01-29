@@ -143,14 +143,14 @@ public final class Sistema extends javax.swing.JFrame {
     public void ListarProductos() {
         List<Productos> ListarPro = proDao.ListarProductos();
         modelo = (DefaultTableModel) TableProducto.getModel();
-        Object[] ob = new Object[6];
+        Object[] ob = new Object[5];
         for (int i = 0; i < ListarPro.size(); i++) {
             ob[0] = ListarPro.get(i).getId();
             ob[1] = ListarPro.get(i).getCodigo();
             ob[2] = ListarPro.get(i).getNombre();
-            ob[3] = ListarPro.get(i).getProveedorPro();
-            ob[4] = ListarPro.get(i).getStock();
-            ob[5] = ListarPro.get(i).getPrecio();
+            //ob[3] = ListarPro.get(i).getProveedorPro();
+            ob[3] = ListarPro.get(i).getStock();
+            ob[4] = ListarPro.get(i).getPrecio();
             modelo.addRow(ob);
         }
         TableProducto.setModel(modelo);
@@ -299,8 +299,6 @@ public final class Sistema extends javax.swing.JFrame {
         txtCantPro = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         txtPrecioPro = new javax.swing.JTextField();
-        jLabel26 = new javax.swing.JLabel();
-        cbxProveedorPro = new javax.swing.JComboBox<>();
         btnGuardarpro = new javax.swing.JButton();
         btnEditarpro = new javax.swing.JButton();
         btnEliminarPro = new javax.swing.JButton();
@@ -349,7 +347,7 @@ public final class Sistema extends javax.swing.JFrame {
         btnNuevaVenta.setForeground(new java.awt.Color(255, 255, 255));
         btnNuevaVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Nventa.png"))); // NOI18N
         btnNuevaVenta.setText("Nueva Venta");
-        btnNuevaVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnNuevaVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnNuevaVenta.setFocusable(false);
         btnNuevaVenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -361,7 +359,7 @@ public final class Sistema extends javax.swing.JFrame {
         btnClientes.setForeground(new java.awt.Color(255, 255, 255));
         btnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Clientes.png"))); // NOI18N
         btnClientes.setText("Clientes");
-        btnClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnClientes.setFocusable(false);
         btnClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -373,7 +371,7 @@ public final class Sistema extends javax.swing.JFrame {
         btnProveedor.setForeground(new java.awt.Color(255, 255, 255));
         btnProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/proveedor.png"))); // NOI18N
         btnProveedor.setText("Proveedor");
-        btnProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnProveedor.setFocusable(false);
         btnProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -385,7 +383,7 @@ public final class Sistema extends javax.swing.JFrame {
         btnProductos.setForeground(new java.awt.Color(255, 255, 255));
         btnProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/producto.png"))); // NOI18N
         btnProductos.setText("Productos");
-        btnProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnProductos.setFocusable(false);
         btnProductos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -402,7 +400,7 @@ public final class Sistema extends javax.swing.JFrame {
         btnVentas.setForeground(new java.awt.Color(255, 255, 255));
         btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/compras.png"))); // NOI18N
         btnVentas.setText("Ventas");
-        btnVentas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVentas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnVentas.setFocusable(false);
         btnVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -420,7 +418,7 @@ public final class Sistema extends javax.swing.JFrame {
         btnUsuarios.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/editar_user.png"))); // NOI18N
         btnUsuarios.setText("Usuarios");
-        btnUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnUsuarios.setFocusable(false);
         btnUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -858,7 +856,7 @@ public final class Sistema extends javax.swing.JFrame {
         jPanel9.add(txtIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 30, -1));
 
         btnGuardarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/GuardarTodo.png"))); // NOI18N
-        btnGuardarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnGuardarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarClienteActionPerformed(evt);
@@ -867,7 +865,7 @@ public final class Sistema extends javax.swing.JFrame {
         jPanel9.add(btnGuardarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 266, 70, 35));
 
         btnEditarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Actualizar (2).png"))); // NOI18N
-        btnEditarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEditarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnEditarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarClienteActionPerformed(evt);
@@ -876,7 +874,7 @@ public final class Sistema extends javax.swing.JFrame {
         jPanel9.add(btnEditarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 266, 70, 35));
 
         btnEliminarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
-        btnEliminarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnEliminarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarClienteActionPerformed(evt);
@@ -885,7 +883,7 @@ public final class Sistema extends javax.swing.JFrame {
         jPanel9.add(btnEliminarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 317, 70, 35));
 
         btnNuevoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/nuevo.png"))); // NOI18N
-        btnNuevoCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnNuevoCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnNuevoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoClienteActionPerformed(evt);
@@ -1190,7 +1188,7 @@ public final class Sistema extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "CODIGO", "DESCRIPCIÓN", "PROVEEDOR", "STOCK", "PRECIO"
+                "ID", "CODIGO", "DESCRIPCIÓN", "STOCK", "PRECIO"
             }
         ));
         TableProducto.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1203,9 +1201,8 @@ public final class Sistema extends javax.swing.JFrame {
             TableProducto.getColumnModel().getColumn(0).setPreferredWidth(20);
             TableProducto.getColumnModel().getColumn(1).setPreferredWidth(50);
             TableProducto.getColumnModel().getColumn(2).setPreferredWidth(100);
-            TableProducto.getColumnModel().getColumn(3).setPreferredWidth(60);
-            TableProducto.getColumnModel().getColumn(4).setPreferredWidth(40);
-            TableProducto.getColumnModel().getColumn(5).setPreferredWidth(50);
+            TableProducto.getColumnModel().getColumn(3).setPreferredWidth(40);
+            TableProducto.getColumnModel().getColumn(4).setPreferredWidth(50);
         }
 
         jPanel5.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 590, 380));
@@ -1222,7 +1219,7 @@ public final class Sistema extends javax.swing.JFrame {
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel22.setText("Código:");
-        jPanel11.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+        jPanel11.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         txtCodigoPro.setBackground(new java.awt.Color(204, 204, 204));
         txtCodigoPro.setBorder(null);
@@ -1235,7 +1232,7 @@ public final class Sistema extends javax.swing.JFrame {
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel23.setText("Descripción:");
-        jPanel11.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+        jPanel11.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
 
         txtDesPro.setBackground(new java.awt.Color(204, 204, 204));
         txtDesPro.setBorder(null);
@@ -1243,7 +1240,7 @@ public final class Sistema extends javax.swing.JFrame {
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel24.setText("Cantidad:");
-        jPanel11.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+        jPanel11.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
         txtCantPro.setBackground(new java.awt.Color(204, 204, 204));
         txtCantPro.setBorder(null);
@@ -1256,7 +1253,7 @@ public final class Sistema extends javax.swing.JFrame {
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel25.setText("Precio:");
-        jPanel11.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
+        jPanel11.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
 
         txtPrecioPro.setBackground(new java.awt.Color(204, 204, 204));
         txtPrecioPro.setBorder(null);
@@ -1267,31 +1264,13 @@ public final class Sistema extends javax.swing.JFrame {
         });
         jPanel11.add(txtPrecioPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 130, 30));
 
-        jLabel26.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        jLabel26.setText("Proveedor:");
-        jPanel11.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
-
-        cbxProveedorPro.setBackground(new java.awt.Color(204, 204, 204));
-        cbxProveedorPro.setBorder(null);
-        cbxProveedorPro.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cbxProveedorProItemStateChanged(evt);
-            }
-        });
-        cbxProveedorPro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxProveedorProActionPerformed(evt);
-            }
-        });
-        jPanel11.add(cbxProveedorPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 130, 30));
-
         btnGuardarpro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/GuardarTodo.png"))); // NOI18N
         btnGuardarpro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarproActionPerformed(evt);
             }
         });
-        jPanel11.add(btnGuardarpro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, 35));
+        jPanel11.add(btnGuardarpro, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, 35));
 
         btnEditarpro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Actualizar (2).png"))); // NOI18N
         btnEditarpro.addActionListener(new java.awt.event.ActionListener() {
@@ -1299,7 +1278,7 @@ public final class Sistema extends javax.swing.JFrame {
                 btnEditarproActionPerformed(evt);
             }
         });
-        jPanel11.add(btnEditarpro, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, -1, 35));
+        jPanel11.add(btnEditarpro, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, 35));
 
         btnEliminarPro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
         btnEliminarPro.addActionListener(new java.awt.event.ActionListener() {
@@ -1307,7 +1286,7 @@ public final class Sistema extends javax.swing.JFrame {
                 btnEliminarProActionPerformed(evt);
             }
         });
-        jPanel11.add(btnEliminarPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, 35));
+        jPanel11.add(btnEliminarPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, -1, 35));
 
         btnNuevoPro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/nuevo.png"))); // NOI18N
         btnNuevoPro.addActionListener(new java.awt.event.ActionListener() {
@@ -1315,7 +1294,7 @@ public final class Sistema extends javax.swing.JFrame {
                 btnNuevoProActionPerformed(evt);
             }
         });
-        jPanel11.add(btnNuevoPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, -1, 35));
+        jPanel11.add(btnNuevoPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, -1, 35));
 
         jPanel30.setBackground(new java.awt.Color(0, 110, 255));
 
@@ -1483,7 +1462,7 @@ public final class Sistema extends javax.swing.JFrame {
         btnGuardarUsuario.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         btnGuardarUsuario.setForeground(new java.awt.Color(255, 255, 255));
         btnGuardarUsuario.setText("Registrar");
-        btnGuardarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnGuardarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarUsuarioActionPerformed(evt);
@@ -1680,7 +1659,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     private void btnProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductosMouseClicked
         // TODO add your handling code here:
-        cbxProveedorPro.removeAllItems();
+        //cbxProveedorPro.removeAllItems();
         llenarProveedor();
 
     }//GEN-LAST:event_btnProductosMouseClicked
@@ -1756,13 +1735,13 @@ public final class Sistema extends javax.swing.JFrame {
     private void btnEditarproActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarproActionPerformed
         // TODO add your handling code here:
         if ("".equals(txtIdproducto.getText())) {
-            JOptionPane.showMessageDialog(null, "Seleecione una fila");
+            JOptionPane.showMessageDialog(null, "Seleccione una fila");
         } else {
             if (!"".equals(txtCodigoPro.getText()) || !"".equals(txtDesPro.getText()) || !"".equals(txtCantPro.getText()) || !"".equals(txtPrecioPro.getText())) {
                 pro.setCodigo(txtCodigoPro.getText());
                 pro.setNombre(txtDesPro.getText());
-                Combo itemP = (Combo) cbxProveedorPro.getSelectedItem();
-                pro.setProveedor(itemP.getId());
+                //Combo itemP = (Combo) cbxProveedorPro.getSelectedItem();
+                //pro.setProveedor(itemP.getId());
                 pro.setStock(Integer.parseInt(txtCantPro.getText()));
                 pro.setPrecio(Double.parseDouble(txtPrecioPro.getText()));
                 pro.setId(Integer.parseInt(txtIdproducto.getText()));
@@ -1771,7 +1750,7 @@ public final class Sistema extends javax.swing.JFrame {
                 LimpiarTable();
                 ListarProductos();
                 LimpiarProductos();
-                cbxProveedorPro.removeAllItems();
+                //cbxProveedorPro.removeAllItems();
                 llenarProveedor();
                 btnEditarpro.setEnabled(false);
                 btnEliminarPro.setEnabled(false);
@@ -1784,11 +1763,11 @@ public final class Sistema extends javax.swing.JFrame {
 
     private void btnGuardarproActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarproActionPerformed
         // TODO add your handling code here:
-        if (!"".equals(txtCodigoPro.getText()) || !"".equals(txtDesPro.getText()) || !"".equals(cbxProveedorPro.getSelectedItem()) || !"".equals(txtCantPro.getText()) || !"".equals(txtPrecioPro.getText())) {
+        if (!"".equals(txtCodigoPro.getText()) || !"".equals(txtDesPro.getText()) || !"".equals(txtCantPro.getText()) || !"".equals(txtPrecioPro.getText())) {
             pro.setCodigo(txtCodigoPro.getText());
             pro.setNombre(txtDesPro.getText());
-            Combo itemP = (Combo) cbxProveedorPro.getSelectedItem();
-            pro.setProveedor(itemP.getId());
+           // Combo itemP = (Combo) cbxProveedorPro.getSelectedItem();
+           // pro.setProveedor(itemP.getId());
             pro.setStock(Integer.parseInt(txtCantPro.getText()));
             pro.setPrecio(Double.parseDouble(txtPrecioPro.getText()));
             proDao.RegistrarProductos(pro);
@@ -1796,7 +1775,7 @@ public final class Sistema extends javax.swing.JFrame {
             LimpiarTable();
             ListarProductos();
             LimpiarProductos();
-            cbxProveedorPro.removeAllItems();
+           // cbxProveedorPro.removeAllItems();
             llenarProveedor();
             btnEditarpro.setEnabled(false);
             btnEliminarPro.setEnabled(false);
@@ -1806,18 +1785,10 @@ public final class Sistema extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnGuardarproActionPerformed
 
-    private void cbxProveedorProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxProveedorProActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbxProveedorProActionPerformed
-
-    private void cbxProveedorProItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxProveedorProItemStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbxProveedorProItemStateChanged
-
     private void txtPrecioProKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioProKeyTyped
         // TODO add your handling code here:
         event.numberDecimalKeyPress(evt, txtPrecioPro);
-                Validaciones.esNumeroEntero(evt, txtNombreClienteventa);
+                //Validaciones.esNumeroEntero(evt, txtNombreClienteventa);
 
     }//GEN-LAST:event_txtPrecioProKeyTyped
 
@@ -1829,12 +1800,10 @@ public final class Sistema extends javax.swing.JFrame {
         btnGuardarpro.setEnabled(false);
         int fila = TableProducto.rowAtPoint(evt.getPoint());
         txtIdproducto.setText(TableProducto.getValueAt(fila, 0).toString());
-        pro = proDao.BuscarId(Integer.parseInt(txtIdproducto.getText()));
-        txtCodigoPro.setText(pro.getCodigo());
-        txtDesPro.setText(pro.getNombre());
-        txtCantPro.setText("" + pro.getStock());
-        txtPrecioPro.setText("" + pro.getPrecio());
-        cbxProveedorPro.setSelectedItem(new Combo(pro.getProveedor(), pro.getProveedorPro()));
+        txtCodigoPro.setText(TableProducto.getValueAt(fila, 1).toString());
+        txtDesPro.setText(TableProducto.getValueAt(fila, 2).toString());
+        txtCantPro.setText(TableProducto.getValueAt(fila, 3).toString());
+        txtPrecioPro.setText(TableProducto.getValueAt(fila, 4).toString());
     }//GEN-LAST:event_TableProductoMouseClicked
 
     private void btnEliminarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProveedorActionPerformed
@@ -2343,7 +2312,6 @@ public final class Sistema extends javax.swing.JFrame {
     private javax.swing.JButton btnUsuarios;
     private javax.swing.JButton btnVentas;
     private javax.swing.JButton btnguardarProveedor;
-    private javax.swing.JComboBox<Object> cbxProveedorPro;
     private javax.swing.JComboBox<String> cbxRol;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2361,7 +2329,6 @@ public final class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
@@ -2473,7 +2440,7 @@ public final class Sistema extends javax.swing.JFrame {
     private void LimpiarProductos() {
         txtIdPro.setText("");
         txtCodigoPro.setText("");
-        cbxProveedorPro.setSelectedItem(null);
+        //cbxProveedorPro.setSelectedItem(null);
         txtDesPro.setText("");
         txtCantPro.setText("");
         txtPrecioPro.setText("");
@@ -2567,7 +2534,7 @@ public final class Sistema extends javax.swing.JFrame {
         for (int i = 0; i < lista.size(); i++) {
             int id = lista.get(i).getId();
             String nombre = lista.get(i).getNombre();
-            cbxProveedorPro.addItem(new Combo(id, nombre));
+            //cbxProveedorPro.addItem(new Combo(id, nombre));
         }
     }
 }

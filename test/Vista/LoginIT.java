@@ -37,7 +37,7 @@ public class LoginIT {
      */
     @Test
     public void testValidar() {
-        System.out.println("validar");
+        System.out.println("");
         Login instance = new Login();
         instance.validar();
     }
@@ -47,7 +47,7 @@ public class LoginIT {
      */
     @Test
     public void testMain() {
-        System.out.println("main");
+        System.out.println("");
         String[] args = null;
         Login.main(args);
     }

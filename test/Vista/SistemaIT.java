@@ -42,7 +42,7 @@ public class SistemaIT {
      */
     @Test
     public void testListarCliente() {
-        System.out.println("ListarCliente");
+        System.out.println("");
         Sistema instance = new Sistema();
         instance.ListarCliente();
     }
@@ -52,7 +52,7 @@ public class SistemaIT {
      */
     @Test
     public void testListarProveedor() {
-        System.out.println("ListarProveedor");
+        System.out.println("");
         Sistema instance = new Sistema();
         instance.ListarProveedor();
     }
@@ -62,7 +62,7 @@ public class SistemaIT {
      */
     @Test
     public void testListarUsuarios() {
-        System.out.println("ListarUsuarios");
+        System.out.println("");
         Sistema instance = new Sistema();
         instance.ListarUsuarios();
     }
@@ -72,7 +72,7 @@ public class SistemaIT {
      */
     @Test
     public void testListarProductos() {
-        System.out.println("ListarProductos");
+        System.out.println("");
         Sistema instance = new Sistema();
         instance.ListarProductos();
     }
@@ -82,7 +82,7 @@ public class SistemaIT {
      */
     @Test
     public void testListarVentas() {
-        System.out.println("ListarVentas");
+        System.out.println("");
         Sistema instance = new Sistema();
         instance.ListarVentas();
     }
@@ -91,7 +91,7 @@ public class SistemaIT {
      */
     @Test
     public void testLimpiarTable() {
-        System.out.println("LimpiarTable");
+        System.out.println("");
         Sistema instance = new Sistema();
         instance.LimpiarTable();
     }
@@ -100,7 +100,7 @@ public class SistemaIT {
      */
     @Test
     public void testMain() {
-        System.out.println("main");
+        System.out.println("");
         String[] args = null;
         Sistema.main(args);
     }   

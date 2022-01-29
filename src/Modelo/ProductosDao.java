@@ -15,15 +15,15 @@ public class ProductosDao {
     ResultSet rs;
     
     public boolean RegistrarProductos(Productos pro){
-        String sql = "INSERT INTO productos (codigo, nombre, proveedor, stock, precio) VALUES (?,?,?,?,?)";
+        String sql = "INSERT INTO productos (codigo, nombre, stock, precio) VALUES (?,?,?,?)";
         try {
             con = cn.Conectar();
             ps = con.prepareStatement(sql);
             ps.setString(1, pro.getCodigo());
             ps.setString(2, pro.getNombre());
-            ps.setInt(3, pro.getProveedor());
-            ps.setInt(4, pro.getStock());
-            ps.setDouble(5, pro.getPrecio());
+           // ps.setInt(3, pro.getProveedor());
+            ps.setInt(3, pro.getStock());
+            ps.setDouble(4, pro.getPrecio());
             ps.execute();
             return true;
         } catch (SQLException e) {
@@ -34,8 +34,8 @@ public class ProductosDao {
     
     public List ListarProductos(){
        List<Productos> Listapro = new ArrayList();
-       //String sql = "SELECT * from productos";
-      String sql = "SELECT pr.id AS id_proveedor, pr.nombre AS nombre_proveedor, p.* FROM proveedor pr INNER JOIN productos p ON pr.id = p.proveedor ORDER BY p.id DESC";
+       String sql = "SELECT * from productos";
+      //String sql = "SELECT pr.id AS id_proveedor, pr.nombre AS ruc_proveedor, p.* FROM proveedor pr INNER JOIN productos p ON pr.id = p.proveedor ORDER BY p.id DESC";
        try {
            con = cn.Conectar();
            ps = con.prepareStatement(sql);
@@ -46,7 +46,7 @@ public class ProductosDao {
                pro.setCodigo(rs.getString("codigo"));
                pro.setNombre(rs.getString("nombre"));
                //pro.setProveedor(rs.getInt("id_proveedor"));
-               //pro.setProveedorPro(rs.getString("nombre_proveedor"));
+               //pro.setProveedorPro(rs.getString("proveedor"));
                pro.setStock(rs.getInt("stock"));
                pro.setPrecio(rs.getDouble("precio"));
                Listapro.add(pro);
@@ -77,15 +77,15 @@ public class ProductosDao {
    }
     
     public boolean ModificarProductos(Productos pro){
-       String sql = "UPDATE productos SET codigo=?, nombre=?, proveedor=?, stock=?, precio=? WHERE id=?";
+       String sql = "UPDATE productos SET codigo=?, nombre=?, stock=?, precio=? WHERE id=?";
        try {
            ps = con.prepareStatement(sql);
            ps.setString(1, pro.getCodigo());
            ps.setString(2, pro.getNombre());
-           ps.setInt(3, pro.getProveedor());
-           ps.setInt(4, pro.getStock());
-           ps.setDouble(5, pro.getPrecio());
-           ps.setInt(6, pro.getId());
+          // ps.setInt(3, pro.getProveedor());
+           ps.setInt(3, pro.getStock());
+           ps.setDouble(4, pro.getPrecio());
+           ps.setInt(5, pro.getId());
            ps.execute();
            return true;
        } catch (SQLException e) {
@@ -121,7 +121,8 @@ public class ProductosDao {
     }
     public Productos BuscarId(int id){
         Productos pro = new Productos();
-        String sql = "SELECT pr.id AS id_proveedor, pr.nombre AS nombre_proveedor, p.* FROM proveedor pr INNER JOIN productos p ON p.proveedor = pr.id WHERE p.id = ?";
+        String sql = "SELECT * from productos";
+       //String sql = "SELECT pr.id AS id_proveedor, pr.nombre AS nombre_proveedor, p.* FROM proveedor pr INNER JOIN productos p ON p.proveedor = pr.id WHERE p.id = ?";
         try {
             con = cn.Conectar();
             ps = con.prepareStatement(sql);
@@ -131,7 +132,7 @@ public class ProductosDao {
                 pro.setId(rs.getInt("id"));
                 pro.setCodigo(rs.getString("codigo"));
                 pro.setNombre(rs.getString("nombre"));
-                pro.setProveedor(rs.getInt("proveedor"));
+                //pro.setProveedor(rs.getInt("proveedor"));
                 pro.setProveedorPro(rs.getString("nombre_proveedor"));
                 pro.setStock(rs.getInt("stock"));
                 pro.setPrecio(rs.getDouble("precio"));
